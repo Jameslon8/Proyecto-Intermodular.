@@ -61,7 +61,13 @@ Este proyecto integra distintas áreas del curso:
 
 En desarrollo 🚧
 El contenido se irá ampliando progresivamente.
-
+# BASE DE DATOS
+# ENTORNOS DE DESAROLLO
+# LENGUAJE DE MARCAS
+# PROGRAMACIÓN
+# SISTEMAS INFORMÁTICOS
+# MÓDULO PROFESIONAL OPTATIVO
+# ITINERARIO PERSONAL A LA EMPLEABILIDAD
 ---
 
 ## 👤 Autor
