@@ -1,14 +1,14 @@
 # Proyecto Intermodular DAW
 
-Proyecto del 1º año de Desarrollo de Aplicaciones Web (DAW) enfocado en integrar los conocimientos adquiridos durante el curso en un único sistema.
+Proyecto del 1º año de DAW enfocado en integrar los conocimientos adquiridos durante el curso en un único sistema.
 
 ---
 
 ## 🧠 Descripción
 
-Este proyecto consiste en la creación de una organización ficticia llamada **HuntPMO**, dedicada a investigar y contener sucesos anómalos no explicables.
+El proyecto consiste en la creación de una organización ficticia llamada **HuntPMO**, dedicada a investigar y contener sucesos anómalos no explicables.
 
-El objetivo es desarrollar una aplicación completa que combine frontend, backend y base de datos, aplicando buenas prácticas de desarrollo.
+El objetivo es desarrollar una aplicación completa que combine frontend, backend y base de datos, aplicando buenas prácticas de desarrollo para que **HuntPMO** funcione como un sistema.
 
 ---
 
