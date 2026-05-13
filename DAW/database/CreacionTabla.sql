@@ -54,6 +54,7 @@ CREATE TABLE Anomalia(
     Codigo int NOT NULL,
     Nombre varchar (50) NOT NULL,
     Peligrosidad int NOT NULL,
+    Tipo varchar (50) NOT NULL,
     Descripcion TEXT,
     InstalacionId int,
     CONSTRAINT fk_Instalacion
