@@ -1,6 +1,6 @@
 package HuntPMOVO;
 
-public class UsuarioVO extends PersonaVO {
+public class UsuarioVO extends PersonaVO{
     private static int UsuarioID;
     private String nombreUser;
     private String domicilio;
@@ -43,8 +43,9 @@ public class UsuarioVO extends PersonaVO {
 
     @Override
     public String toString() {
-
+        return "UsuarioVO{" +
+                "nombreUser='" + nombreUser + '\'' +
+                ", domicilio='" + domicilio + '\'' +
+                '}';
     }
-
-
 }

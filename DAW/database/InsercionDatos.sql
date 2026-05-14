@@ -8,21 +8,22 @@ VALUES ('48275931G', 'Alexis', 'Nessie', 'Johnson', '612345789', 'Ness2342@gmail
 ('27591846Z', 'Alon', 'Marinee', 'Dafoe', '622334455', '99Raven99@gmail.com', '200147258369'),
 ('64018392S', 'Chris', 'Fernandez', NULL, '611987654', 'SoyYomismoSisime@gmail.com', '471369258014'),
 ('81927365B', 'Standford', 'Williams', 'Jerinfors', '634567892', 'diaryNNNumber4@gmail.com', '091753486201'),
-('50372691R', 'Paco', 'Gustavez', 'Cordonez', '699123456', 'The5thrue0ne@gmail.com', '331468275903');
+('50372691R', 'Paco', 'Gustavez', 'Cordonez', '699123456', 'The5thrue0ne@gmail.com', '331468275903'),
+('50372691R', 'Jombo', 'Melendez', 'Johnson', '699023856', 'PersonaNormal@gmail.com', '321468257903');
 
-INSERT INTO Usuario(NombreUser, Domicilio, DNI)
-VALUES ('TheJenn', 'Nevermind Street 44', '91726384Q'),
-('Jameslon', 'Niohigi Street 31', '64018392S'),
-('Marceline', 'Adevnture Street 44', '36482915L'),
-('Raven', 'Down Niohigi Street 81', '27591846Z'),
-('Longesd342', 'Nevermind Street 22', '72649183H');
+INSERT INTO Usuario(NombreUser, Domicilio, Contrasenya, DNI)
+VALUES ('TheJenn', 'Nevermind Street 44',"Kellllogs523", '91726384Q'),
+('Jameslon', 'Niohigi Street 31',"PreciousOMG", '64018392S'),
+('Marceline', 'Adevnture Street 44',"Bromdennn12m", '36482915L'),
+('Raven', 'Down Niohigi Street 81',"YnrUHRI3J", '27591846Z'),
+('Longesd342', 'Nevermind Street 22',"aaaghggwewbbb2", '72649183H');
 
-INSERT INTO Agente (Mote, Rango, Especialidad, DNI)
-VALUES ('Ness1', '3', 'Anomalias digitales', '48275931G'),
-('Ness2', '4', 'Anomalias aquaticas', '19384756T'),
-('Morequier', '4', 'Anomalias locales', '05837462M'),
-('TheCreator', '5', 'Anomalias urbanas', '81927365B'),
-('Mex', '2', 'Anomalias lingüisticas', '50372691R');
+INSERT INTO Agente (Mote, Rango, Especialidad, Contrasenya, DNI)
+VALUES ('Ness1', '3', 'Anomalias digitales',"5274528945824", '48275931G'),
+('Ness2', '4', 'Anomalias aquaticas',"Raahhahshsghs" '19384756T'),
+('Morequier', '4', 'Anomalias locales',"Contrasenya", '05837462M'),
+('TheCreator', '5', 'Anomalias urbanas',"SooooHighhhh", '81927365B'),
+('Mex', '2', 'Anomalias lingüisticas',"1a", '50372691R');
 
 INSERT INTO Reporte (Comentario, Fecha, Estado, UsuarioId)
 VALUES ("He comprado un juguete para mi hijo y vienen cosas bastante raras", '2020-03-15 14:30:00', 'Enviado', 3),

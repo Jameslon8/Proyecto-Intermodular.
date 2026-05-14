@@ -14,6 +14,7 @@ CREATE TABLE Usuario (
     UsuarioId int AUTO_INCREMENT PRIMARY KEY,
     NombreUser varchar(50) NOT NULL,
     Domicilio varchar(100) NOT NULL,
+    Contrasenya varchar(50) NOT NULL,
     DNI varchar(9),
     CONSTRAINT fk_Persona
     FOREIGN KEY (DNI)
@@ -25,6 +26,7 @@ CREATE TABLE Agente (
     Mote varchar(50) NOT NULL,
     Rango int NOT NULL,
     Especialidad varchar(50) NOT NULL,
+    Contrasenya varchar(50) NOT NULL,
     DNI varchar(9),
     CONSTRAINT fk_PersonaA
     FOREIGN KEY (DNI)

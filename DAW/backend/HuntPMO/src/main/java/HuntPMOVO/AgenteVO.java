@@ -1,6 +1,6 @@
 package HuntPMOVO;
 
-public class AgenteVO extends PersonaVO {
+public class AgenteVO extends PersonaVO{
     private static int agenteID;
     private String mote;
     private int rango;

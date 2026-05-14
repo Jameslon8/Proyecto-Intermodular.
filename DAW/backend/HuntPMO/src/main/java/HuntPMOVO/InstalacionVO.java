@@ -1,7 +1,5 @@
 package HuntPMOVO;
 
-import java.util.ArrayList;
-
 public class InstalacionVO {
     private int instalacionId;
     private String nombre;
@@ -47,11 +45,13 @@ public class InstalacionVO {
         this.seguridad = seguridad;
     }
 
-    public ArrayList<AnomaliaVO> getAnomalias() {
-        return anomalias;
-    }
-
-    public void setAnomalias(ArrayList<AnomaliaVO> anomalias) {
-        this.anomalias = anomalias;
+    @Override
+    public String toString() {
+        return "InstalacionVO{" +
+                "instalacionId=" + instalacionId +
+                ", nombre='" + nombre + '\'' +
+                ", ubicacion='" + ubicacion + '\'' +
+                ", seguridad=" + seguridad +
+                '}';
     }
 }
