@@ -53,7 +53,8 @@ CREATE TABLE Anomalia(
     AnomaliaId int AUTO_INCREMENT PRIMARY KEY,
     Codigo int NOT NULL,
     Nombre varchar (50) NOT NULL,
-    Peligrosidad varchar (50) NOT NULL,
+    Peligrosidad int NOT NULL,
+    Tipo varchar (50) NOT NULL,
     Descripcion TEXT,
     InstalacionId int,
     CONSTRAINT fk_Instalacion
@@ -75,8 +76,8 @@ CREATE TABLE Rol (
 
 CREATE TABLE RolRevision (
     NuevoEstado varchar(50),
-    ReporteId int,
-    RolId int,
+    ReporteId int PRIMARY KEY,
+    RolId int PRIMARY KEY,
     CONSTRAINT fk_Reporte
     FOREIGN KEY (ReporteId)
     REFERENCES Reporte(ReporteId),
@@ -87,8 +88,8 @@ CREATE TABLE RolRevision (
 
 CREATE TABLE RolAsignacion (
     NuevaDescripcion TEXT NOT NULL,
-    AnomaliaId int,
-    RolId int,
+    AnomaliaId int PRIMARY KEY,
+    RolId int PRIMARY KEY,
     CONSTRAINT fk_Asignacion
     FOREIGN KEY (AnomaliaId)
     REFERENCES Anomalia(AnomaliaId),
@@ -99,8 +100,8 @@ CREATE TABLE RolAsignacion (
 
 CREATE TABLE ReportaAnomalia (
     Conclusiones varchar(255) NOT NULL,
-    AnomaliaId int,
-    ReporteId int,
+    AnomaliaId int PRIMARY KEY,
+    ReporteId int PRIMARY KEY,
     CONSTRAINT fk_ReporteR
     FOREIGN KEY (ReporteId)
     REFERENCES Reporte(ReporteId),
