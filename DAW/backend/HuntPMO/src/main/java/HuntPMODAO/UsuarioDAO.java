@@ -1,5 +1,6 @@
 package HuntPMODAO;
 
+import HuntPMOVO.PersonaVO;
 import HuntPMOVO.UsuarioVO;
 
 import java.sql.*;
@@ -88,9 +89,12 @@ public class UsuarioDAO {
     public UsuarioVO verificarUsuario(Connection con, String nombreUser, String contrasenya) {
 
         String consulta = """
-            SELECT UsuarioId, NombreUser
-            FROM Usuario
-            WHERE NombreUser = ? AND Contrasenya = ?
+            SELECT u.UsuarioId, u.NombreUser, u.Contrasenya,
+               p.DNI, p.Nombre, p.PrApellido, p.SgApellido,
+               p.Domicilio, p.Telefono, p.Email, p.NSS
+            FROM Usuario u
+            INNER JOIN Persona p ON u.DNI = p.DNI
+            WHERE u.NombreUser = ? AND u.Contrasenya = ?
             """;
 
         try (PreparedStatement stmt = con.prepareStatement(consulta)) {
@@ -101,9 +105,22 @@ public class UsuarioDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
+                PersonaVO persona = new PersonaVO(
+                        rs.getString("DNI"),
+                        rs.getString("Nombre"),
+                        rs.getString("PrApellido"),
+                        rs.getString("SgApellido"),
+                        rs.getString("Domicilio"),
+                        rs.getString("Telefono"),
+                        rs.getString("Email"),
+                        rs.getString("NSS")
+                );
+
                 return new UsuarioVO(
                         rs.getInt("UsuarioId"),
-                        rs.getString("NombreUser")
+                        rs.getString("NombreUser"),
+                        rs.getString("Contrasenya"),
+                        persona
                 );
             }
 

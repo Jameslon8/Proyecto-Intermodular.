@@ -14,7 +14,7 @@ public class UsuarioVO{
     }
 
     public UsuarioVO(int usuarioID, String nombreUser) {
-        usuarioID = usuarioID;
+        this.usuarioID = usuarioID;
         this.nombreUser = nombreUser;
     }
 

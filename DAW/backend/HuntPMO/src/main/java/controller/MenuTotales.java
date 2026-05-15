@@ -59,6 +59,10 @@ public class MenuTotales {
 
     }
 
+    private void registrarse(){
+
+    }
+
     private void loginUser() {
         System.out.print("Introduzca nombre del usuario: ");
         String nombreUser = sc.nextLine();
@@ -94,7 +98,7 @@ public class MenuTotales {
 
             switch (opcion) {
                 case 1:
-
+                    /*verMisDatos(usuario);*/
                     break;
                 case 2:
                     escribirReporte(usuario);
@@ -113,6 +117,26 @@ public class MenuTotales {
             }
 
         } while (opcion != 0);
+    }
+
+    private void verMisDatos(UsuarioVO usuario) {
+        System.out.println("\n|=== MIS DATOS ===|");
+
+        System.out.println("ID usuario: " + usuario.getUsuarioID());
+        System.out.println("Nombre usuario: " + usuario.getNombreUser());
+
+        if (usuario.getPersona() != null) {
+            System.out.println("DNI: " + usuario.getPersona().getDni());
+            System.out.println("Nombre: " + usuario.getPersona().getNombre());
+            System.out.println("Primer apellido: " + usuario.getPersona().getPrApellido());
+            System.out.println("Segundo apellido: " + usuario.getPersona().getSgApellido());
+            System.out.println("Domicilio: " + usuario.getPersona().getDomicilio());
+            System.out.println("Telefono: " + usuario.getPersona().getTelefono());
+            System.out.println("Email: " + usuario.getPersona().getEmail());
+            System.out.println("NSS: " + usuario.getPersona().getNSS());
+        } else {
+            System.out.println("No se han cargado los datos personales.");
+        }
     }
 
     private void escribirReporte(UsuarioVO usuario) {
