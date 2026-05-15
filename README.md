@@ -39,7 +39,6 @@ mi-proyecto/
 3. Ejecutar el backend (Java)
 4. Abrir el frontend en el navegador
 
-*(Esta sección se irá ampliando a medida que avance el proyecto)*
 
 ---
 
