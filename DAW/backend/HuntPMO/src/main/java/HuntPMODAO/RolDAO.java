@@ -3,6 +3,7 @@ package HuntPMODAO;
 import HuntPMOVO.RolVO;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -81,5 +82,15 @@ public class RolDAO {
         return null;
     }
 
+    public boolean finalizarRol(Connection con, int rolId, LocalDateTime fechaFinalizacion) throws SQLException {
+        String update = "UPDATE Rol SET FechaFinalizacion = ? WHERE RolId = ?";
+
+        try (PreparedStatement stmt = con.prepareStatement(update)) {
+            stmt.setTimestamp(1, Timestamp.valueOf(fechaFinalizacion));
+            stmt.setInt(2, rolId);
+
+            return stmt.executeUpdate() > 0;
+        }
+    }
 
 }

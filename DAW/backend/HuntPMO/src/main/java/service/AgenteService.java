@@ -59,4 +59,16 @@ public class AgenteService {
             return false;
         }
     }
+
+    public AgenteVO verificarAgente(String mote, String contrasenya) {
+
+        try (Connection con = Conexion.getConexion()) {
+
+            return daoAgente.verificarAgente(con, mote, contrasenya);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

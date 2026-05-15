@@ -20,6 +20,15 @@ public class RolVO {
         this.agenteId = agenteId;
     }
 
+    public RolVO(String rol, String detalles, LocalDateTime fechaComienzo,
+                 LocalDateTime fechaFinalizacion, int agenteId) {
+        this.rol = rol;
+        this.detalles = detalles;
+        this.fechaComienzo = fechaComienzo;
+        this.fechaFinalizacion = fechaFinalizacion;
+        this.agenteId = agenteId;
+    }
+
     public int getRolId() {
         return rolId;
     }

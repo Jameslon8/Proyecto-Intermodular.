@@ -106,4 +106,52 @@ public class AgenteDAO {
         }
     }
 
+    public AgenteVO verificarAgente(Connection con, String mote, String contrasenya) {
+
+        String consulta = """
+            SELECT a.AgenteId, a.Mote, a.Rango, a.Especialidad, a.Contrasenya,
+                   p.DNI, p.Nombre, p.PrApellido, p.SgApellido,
+                   p.Domicilio, p.Telefono, p.Email, p.NSS
+            FROM Agente a
+            INNER JOIN Persona p ON a.DNI = p.DNI
+            WHERE a.Mote = ? AND a.Contrasenya = ?
+            """;
+
+        try (PreparedStatement stmt = con.prepareStatement(consulta)) {
+
+            stmt.setString(1, mote);
+            stmt.setString(2, contrasenya);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                PersonaVO persona = new PersonaVO(
+                        rs.getString("DNI"),
+                        rs.getString("Nombre"),
+                        rs.getString("PrApellido"),
+                        rs.getString("SgApellido"),
+                        rs.getString("Domicilio"),
+                        rs.getString("Telefono"),
+                        rs.getString("Email"),
+                        rs.getString("NSS")
+                );
+
+                return new AgenteVO(
+                        rs.getInt("AgenteId"),
+                        rs.getString("Mote"),
+                        rs.getInt("Rango"),
+                        rs.getString("Especialidad"),
+                        rs.getString("Contrasenya"),
+                        persona
+                );
+            }
+
+            rs.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 }

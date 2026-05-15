@@ -24,6 +24,14 @@ public class AgenteVO{
         this.especialidad = especialidad;
     }
 
+    public AgenteVO(String mote, int rango, String especialidad, String contrasenya, PersonaVO persona) {
+        this.mote = mote;
+        this.rango = rango;
+        this.especialidad = especialidad;
+        this.contrasenya = contrasenya;
+        this.persona = persona;
+    }
+
     public int getAgenteID() {
         return agenteID;
     }

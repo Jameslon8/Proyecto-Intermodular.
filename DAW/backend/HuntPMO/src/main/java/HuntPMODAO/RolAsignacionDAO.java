@@ -74,4 +74,20 @@ public class RolAsignacionDAO {
         }
     }
 
+    public boolean actualizarNuevaDescripcion(Connection con, RolAsignacionVO rolAsignacion) throws SQLException {
+        String update = """
+            UPDATE RolAsignacion
+            SET NuevaDescripcion = ?
+            WHERE AnomaliaId = ? AND RolId = ?
+            """;
+
+        try (PreparedStatement stmt = con.prepareStatement(update)) {
+            stmt.setString(1, rolAsignacion.getNuevaDescripcion());
+            stmt.setInt(2, rolAsignacion.getAnomaliaId());
+            stmt.setInt(3, rolAsignacion.getRolId());
+
+            return stmt.executeUpdate() > 0;
+        }
+    }
+
 }

@@ -20,6 +20,15 @@ public class AnomaliaVO {
         this.instalacionId = instalacionId;
     }
 
+    public AnomaliaVO(int codigo, String nombre, int peligrosidad, String tipo, String descripcion, int instalacionId) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.peligrosidad = peligrosidad;
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+        this.instalacionId = instalacionId;
+    }
+
     public int getAnomaliaId() {
         return anomaliaId;
     }

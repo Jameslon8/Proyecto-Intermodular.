@@ -43,4 +43,22 @@ public class RolService {
                 return false;
             }
         }
+
+    public RolVO crearRolRevision(String detalles, int agenteId) {
+        RolVO rol = new RolVO(
+                "R",
+                detalles,
+                java.time.LocalDateTime.now(),
+                java.time.LocalDateTime.now(),
+                agenteId
+        );
+
+        try (Connection con = Conexion.getConexion()) {
+            return daoRol.crearRol(con, rol);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
