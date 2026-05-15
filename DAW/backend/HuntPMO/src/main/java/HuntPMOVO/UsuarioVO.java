@@ -13,6 +13,13 @@ public class UsuarioVO{
         this.persona = persona;
     }
 
+    public UsuarioVO(String nombreUser, String contrasenya, PersonaVO persona) {
+        this.nombreUser = nombreUser;
+        this.contrasenya = contrasenya;
+        this.persona = persona;
+    }
+
+
     public UsuarioVO(int usuarioID, String nombreUser) {
         this.usuarioID = usuarioID;
         this.nombreUser = nombreUser;

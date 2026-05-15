@@ -107,6 +107,23 @@ public class AnomaliaService {
         }
     }
 
+    public void verDescripcionAnomalia(int anomaliaId) {
+        try (Connection con = Conexion.getConexion()) {
+
+            String descripcion = daoAnomalia.obtenerDescripcionAnomalia(con, anomaliaId);
+
+            if (descripcion == null) {
+                System.out.println("No existe esa anomalia.");
+            } else {
+                System.out.println("\n|=== DESCRIPCION ANOMALIA ===|");
+                System.out.println(descripcion);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public void listarAnomaliasPorPeligrosidad(int peligrosidad) {
         List<AnomaliaVO> anomalias = new ArrayList<>();

@@ -46,7 +46,7 @@ public class MenuTotales {
                 break;
 
             case 4:
-                /*accesoDirector();*/
+                accesoDirector();
                 break;
 
             case 0:
@@ -104,7 +104,6 @@ public class MenuTotales {
         String contrasenya = sc.nextLine();
 
         UsuarioVO usuario = new UsuarioVO(
-                0,
                 nombreUser,
                 contrasenya,
                 persona
@@ -123,7 +122,7 @@ public class MenuTotales {
         System.out.print("Introduzca nombre del usuario: ");
         String nombreUser = sc.nextLine();
 
-        System.out.print("Introduzca contrasenya: ");
+        System.out.print("Introduzca contraseña: ");
         String contrasenya = sc.nextLine();
 
         UsuarioVO usuario = usuarioService.verificarUsuario(nombreUser, contrasenya);
@@ -154,7 +153,7 @@ public class MenuTotales {
 
             switch (opcion) {
                 case 1:
-                    /*verMisDatos(usuario);*/
+                    verMisDatos(usuario);
                     break;
                 case 2:
                     escribirReporte(usuario);
@@ -544,6 +543,7 @@ public class MenuTotales {
             System.out.println("3. Ver anomalias por tipo");
             System.out.println("4. Ver anomalias por instalacion");
             System.out.println("5. Ver mis anomalias pendientes");
+            System.out.println("6. Ver descripcion de una anomalia");
             System.out.println("0. Volver");
             System.out.print("Opcion: ");
 
@@ -575,7 +575,9 @@ public class MenuTotales {
                 case 5:
                     anomaliaService.listarMisAnomaliasPendientes(agente.getAgenteID());
                     break;
-
+                case 6:
+                    verDescripcionAnomalia();
+                    break;
                 case 0:
                     System.out.println("Volviendo...");
                     break;
@@ -586,6 +588,13 @@ public class MenuTotales {
             }
 
         } while (opcion != 0);
+    }
+
+    private void verDescripcionAnomalia() {
+        System.out.print("ID de la anomalia: ");
+        int anomaliaId = Integer.parseInt(sc.nextLine());
+
+        anomaliaService.verDescripcionAnomalia(anomaliaId);
     }
 
     private void menuGestionAnomalias(AgenteVO agente) {
@@ -726,6 +735,7 @@ public class MenuTotales {
 
     private void crearAgenteDirector() {
         System.out.println("\n|=== CREAR AGENTE ===|");
+        System.out.println("DATOS PERSONALES:");
 
         System.out.print("DNI: ");
         String dni = sc.nextLine();
@@ -759,6 +769,7 @@ public class MenuTotales {
             persona = new PersonaVO(dni, nombre, prApellido, sgApellido, domicilio, telefono, email, nss);
         }
 
+        System.out.println("DATOS AGENTE:");
         System.out.print("Mote: ");
         String mote = sc.nextLine();
 
@@ -768,7 +779,7 @@ public class MenuTotales {
         System.out.print("Especialidad: ");
         String especialidad = sc.nextLine();
 
-        System.out.print("Contrasenya: ");
+        System.out.print("Contraseña: ");
         String contrasenya = sc.nextLine();
 
         AgenteVO agente = new AgenteVO(
@@ -790,6 +801,7 @@ public class MenuTotales {
 
     private void crearAnomaliaDirector() {
         System.out.println("\n|=== CREAR ANOMALIA ===|");
+        System.out.println("DATOS ANOMALIA:");
 
         System.out.print("Codigo: ");
         int codigo = Integer.parseInt(sc.nextLine());
