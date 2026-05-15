@@ -1,5 +1,6 @@
 package controller;
 
+import HuntPMOVO.PersonaVO;
 import HuntPMOVO.ReporteVO;
 import HuntPMOVO.UsuarioVO;
 import service.ReporteService;
@@ -41,7 +42,7 @@ public class MenuTotales {
                 break;
 
             case 3:
-                /*registrarUsuario();*/
+                registrarUsuario();
                 break;
 
             case 4:
@@ -59,8 +60,63 @@ public class MenuTotales {
 
     }
 
-    private void registrarse(){
+    private void registrarUsuario() {
+        System.out.println("\n|=== REGISTRO USUARIO ===|");
+        System.out.println("DATOS PERSONALES:");
 
+        System.out.print("DNI: ");
+        String dni = sc.nextLine();
+
+        System.out.print("Nombre: ");
+        String nombre = sc.nextLine();
+
+        System.out.print("Primer apellido: ");
+        String prApellido = sc.nextLine();
+
+        System.out.print("Segundo apellido, si no tiene dejalo vacio: ");
+        String sgApellido = sc.nextLine();
+
+        System.out.print("Domicilio: ");
+        String domicilio = sc.nextLine();
+
+        System.out.print("Telefono: ");
+        String telefono = sc.nextLine();
+
+        System.out.print("Email: ");
+        String email = sc.nextLine();
+
+        System.out.print("NSS: ");
+        String nss = sc.nextLine();
+
+        PersonaVO persona;
+
+        if (sgApellido.equals("")) {
+            persona = new PersonaVO(dni, nombre, prApellido, domicilio, telefono, email, nss);
+        } else {
+            persona = new PersonaVO(dni, nombre, prApellido, sgApellido, domicilio, telefono, email, nss);
+        }
+
+        System.out.println("DATOS USUARIO:");
+        System.out.print("Nombre de usuario: ");
+        String nombreUser = sc.nextLine();
+
+        System.out.print("Contrasenya: ");
+        String contrasenya = sc.nextLine();
+
+        UsuarioVO usuario = new UsuarioVO(
+                0,
+                nombreUser,
+                contrasenya,
+                persona
+        );
+
+        boolean registrado = usuarioService.registrarUsuario(persona, usuario);
+
+        if (registrado) {
+            System.out.println("Usuario registrado correctamente.");
+        } else {
+            System.out.println("No se pudo registrar el usuario.");
+        }
     }
 
     private void loginUser() {
