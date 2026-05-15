@@ -28,6 +28,35 @@ public class MenuTotales {
             System.out.println("0. Salir");
             System.out.print("Opcion: ");
         }while(opcion != 0);
+
+        opcion = Integer.parseInt(sc.nextLine());
+
+        switch (opcion) {
+            case 1:
+                loginUser();
+                break;
+
+            case 2:
+                /*loginAgente();*/
+                break;
+
+            case 3:
+                /*registrarUsuario();*/
+                break;
+
+            case 4:
+                /*accesoDirector();*/
+                break;
+
+            case 0:
+                System.out.println("Saliendo...");
+                break;
+
+            default:
+                System.out.println("Opcion no valida.");
+                break;
+        }
+
     }
 
     private void loginUser() {
@@ -61,15 +90,18 @@ public class MenuTotales {
             System.out.println("0. Cerrar sesion");
             System.out.print("Opcion: ");
 
+            opcion = Integer.parseInt(sc.nextLine());
+
             switch (opcion) {
                 case 1:
 
                     break;
                 case 2:
-
+                    escribirReporte(usuario);
                     break;
                 case 3:
-
+                    System.out.println("Tus reportes: ");
+                    reporteService.listarReportesPorUsuario(usuario.getUsuarioID());
                     break;
                 case 0:
                     System.out.println("Sesion cerrada.");
@@ -90,7 +122,6 @@ public class MenuTotales {
         String comentario = sc.nextLine();
 
         ReporteVO reporte = new ReporteVO(
-                0,
                 comentario,
                 LocalDateTime.now(),
                 "Pendiente",
@@ -104,5 +135,10 @@ public class MenuTotales {
         } else {
             System.out.println("No se pudo crear el reporte.");
         }
+    }
+
+    private void verMisReportes(UsuarioVO usuario) {
+        System.out.println("\n|=== MIS REPORTES ===|");
+        reporteService.listarReportesPorUsuario(usuario.getUsuarioID());
     }
 }

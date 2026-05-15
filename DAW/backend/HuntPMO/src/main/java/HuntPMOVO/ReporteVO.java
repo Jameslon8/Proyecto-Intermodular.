@@ -17,6 +17,14 @@ public class ReporteVO {
         this.usuarioId = usuarioId;
     }
 
+    public ReporteVO(String comentario, LocalDateTime fecha, String estado, int usuarioId) {
+        this.comentario = comentario;
+        this.fecha = fecha;
+        this.estado = estado;
+        this.usuarioId = usuarioId;
+    }
+
+
     public int getReporteId() {
         return reporteId;
     }

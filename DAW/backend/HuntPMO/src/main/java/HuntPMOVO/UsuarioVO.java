@@ -19,7 +19,7 @@ public class UsuarioVO{
     }
 
     public int getUsuarioID() {
-        return UsuarioID;
+        return usuarioID;
     }
 
     public String getNombreUser() {
@@ -31,7 +31,7 @@ public class UsuarioVO{
     }
 
     public void setUsuarioID(int usuarioID) {
-        UsuarioID = usuarioID;
+        usuarioID = usuarioID;
     }
 
     public String getContrasenya() {
@@ -53,7 +53,7 @@ public class UsuarioVO{
     @Override
     public String toString() {
         return "UsuarioVO{" +
-                "UsuarioID=" + UsuarioID +
+                "UsuarioID=" + usuarioID +
                 ", nombreUser='" + nombreUser + '\'' +
                 ", persona=" + persona +
                 '}';

@@ -1,5 +1,7 @@
 CREATE DATABASE HuntPMO;
 
+USE HuntPMO
+
 CREATE TABLE Persona (
     DNI varchar(9) PRIMARY KEY,
     Nombre varchar(50) NOT NULL,

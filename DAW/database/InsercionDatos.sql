@@ -9,7 +9,7 @@ VALUES ('48275931G', 'Alexis', 'Nessie', 'Johnson','Subwater Street 62', '612345
 ('64018392S', 'Chris', 'Fernandez', NULL,'Niohigi Street 31', '611987654', 'SoyYomismoSisime@gmail.com', '471369258014'),
 ('81927365B', 'Standford', 'Williams', 'Jerinfors', 'Forcloe Street 37', '634567892', 'diaryNNNumber4@gmail.com', '091753486201'),
 ('50372691R', 'Paco', 'Gustavez', 'Cordonez','Holowdol Street 29', '699123456', 'The5thrue0ne@gmail.com', '331468275903'),
-('50372691R', 'Jombo', 'Melendez', 'Johnson','Marrieto Street 12', '699023856', 'PersonaNormal@gmail.com', '321468257903');
+('50372692R', 'Jombo', 'Melendez', 'Johnson','Marrieto Street 12', '699023856', 'PersonaNormal@gmail.com', '321468257903');
 
 INSERT INTO Usuario(NombreUser, Contrasenya, DNI)
 VALUES ('TheJenn', "Kellllogs523", '91726384Q'),
@@ -20,7 +20,7 @@ VALUES ('TheJenn', "Kellllogs523", '91726384Q'),
 
 INSERT INTO Agente (Mote, Rango, Especialidad, Contrasenya, DNI)
 VALUES ('Ness1', '3', 'Anomalias digitales',"5274528945824", '48275931G'),
-('Ness2', '4', 'Anomalias aquaticas',"Raahhahshsghs" '19384756T'),
+('Ness2', '4', 'Anomalias aquaticas',"Raahhahshsghs", '19384756T'),
 ('Morequier', '4', 'Anomalias locales',"Contrasenya", '05837462M'),
 ('TheCreator', '5', 'Anomalias urbanas',"SooooHighhhh", '81927365B'),
 ('Mex', '2', 'Anomalias lingüisticas',"1a", '50372691R');
@@ -38,31 +38,31 @@ VALUES ("Sitio 9B", "Alaska", 4),
 ("Sitio 0Y", "España", 5),
 ("Sitio 8V", "Finlandia", 2);
 
-INSERT INTO Anomalia (Codigo, Nombre, Peligrosidad, Descripcion, InstalacionId)
-VALUES (0432, "Kit de supervivencia zombie", 2, "Kit de supervivencia para niños creado en los años 90 por Prepare Entertaimenº (No se han 
+INSERT INTO Anomalia (Codigo, Nombre, Peligrosidad, Tipo, Descripcion, InstalacionId)
+VALUES (0432, "Kit de supervivencia zombie", 2, "Tipo local y biologica", "Kit de supervivencia para niños creado en los años 90 por Prepare Entertaimenº (No se han 
 encontrado registros de que tal compañia extista). Los propiedades anomalas de este objeto son principalmente con su contenido.
 El kit contiene objetos para defensa personal como armas y pistolas funcionales, jeringuillas para curar estados de parisitación (Totalmente funcionales)
 ,set medico y una radio con retransmisiones habituales con un futuro apocaliptico. Las veces que se ha intentado registrar de donde proviene
 la señal han sido en vano.", 3),
-(0333, "Monsbear", 2, "Oso pardo con pulsaciones al ritmo de la canción Monster de Skillex. Las pulsaciones del corazón palpitan al ritmo exacto
+(0333, "Monsbear", 2, "Tipo biologica y musical", "Oso pardo con pulsaciones al ritmo de la canción Monster de Skillex. Las pulsaciones del corazón palpitan al ritmo exacto
 de la canción incluso con efectos de sonidos ocasionales. Una vez que termine la canción se detiene por un mili segundo y vuelve a sonar desde el principio", 2),
-(2351, "Sujetos llamados []", 3, "Esta anomalia ocurre tras poner legalmente el nombre de [borrado] a un recien nacido en la forma que se haga en cada pais.
+(2351, "Sujetos llamados []", 3, "Tipo lingüistica y social", "Esta anomalia ocurre tras poner legalmente el nombre de [borrado] a un recien nacido en la forma que se haga en cada pais.
 Tras que el bebe sea nombrado pasara a ser parte de la anomalia y cambiara su conducta totalmente. Datos historicos registran que todas las personas que han
 sido llamadas [datos borrados] forman parte de un culto que pasa entre generaciones con el objetivo de crear un arma definitiva la cual se desconoce su funcion. 
 Todo intento de construir el arma ha sido detenido con exito.", 4),
-(0007, "Hombre lobo normal y corriente", 2, "Es un sujeto baron de 21 años llamado William Jenkens capaz de transformarse en licantropo dias de luna llena.
+(0007, "Hombre lobo normal y corriente", 2, "Tipo urbana y biologica", "Es un sujeto baron de 21 años llamado William Jenkens capaz de transformarse en licantropo dias de luna llena.
 Durante este estado el sujeto pierde toda noción humana hasta que la luna llena se vaya en un radio de 200km.", 1),
-(1129, "Almacen mobilistico", 2, "[Datos solo visibles dentro del almacen]", 3),
-(0173, "La estatua", 2, "Estatua de marmol con forma humanoida y cara pintada en forma de alien. La caracteristica anomala de este objeto ocurre al perder el
+(1129, "Almacen mobilistico", 2, "Tipo desconocido", "[Datos solo visibles dentro del almacen]", 3),
+(0173, "La estatua", 2, "Tipo artistica y sensorial", "Estatua de marmol con forma humanoida y cara pintada en forma de alien. La caracteristica anomala de este objeto ocurre al perder el
 contacto visual del objeto se movera a una velocidad altisima rompiendo el cuello de todo al que alcanze hasta volver a hacer contacto visual inenterrumpido.", 3),
-(0065, "El cache", 2, "Es un metodo de almacenamiento rapido normal que se encuentra en un ordenador de la marca Victus. Los efectos anómalos ocurren cuando
+(0065, "El cache", 2, "Tipo digital", "Es un metodo de almacenamiento rapido normal que se encuentra en un ordenador de la marca Victus. Los efectos anómalos ocurren cuando
 algo de información ya no pertenece al cache. Tras que el cache pierde dicha información toda información o link que existe en la red sobre eso sera completamente
 borrado.", 5),
-(1345, "Acontecimientos catastróficos", 2, "Es un evento que ocurre cada 3 meses donde un edifcio en la localidad de Orleans es captado por el'Castastrofe'.
+(1345, "Acontecimientos catastróficos", 2, "Tipo local", "Es un evento que ocurre cada 3 meses donde un edifcio en la localidad de Orleans es captado por el'Castastrofe'.
 Durante esa semana cada dia el edificio sufrira varios eventos peligrosos que puedan llevar a su destrucción. Los dias continuaran hasta que el edificio quede
 hecho pedazas. De ahí la cuentra atras volvera a ocurrir.", 3);
 
-INSERT INTO Rol (Rol, Detalles, FechaComienzo, FechaFinalización, AgenteId)
+INSERT INTO Rol (Rol, Detalles, FechaComienzo, FechaFinalizacion, AgenteId)
 VALUES ("R", "Reporte revisado y se detecto anomalia. Se llevaran a cabo recolecciones de todo producto en todas las tiendas locales de la zona.", '2020-03-15 15:30:00',
  '2020-03-15 18:45:10', 3),
  ("A", "Recolección de todo kit titulado /Kit de supervivencia zombie/ en un area de 900 km2 de donde ocurrio el reporte.", '2020-03-15 20:00:00',
