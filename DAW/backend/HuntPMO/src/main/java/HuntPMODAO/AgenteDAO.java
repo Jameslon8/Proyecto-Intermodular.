@@ -13,7 +13,7 @@ public class AgenteDAO {
 
         String consulta = """
             SELECT a.AgenteId, a.Mote, a.Rango, a.Especialidad, a.Contrasenya,
-                p.DNI, p.Nombre, p.PrApellido, p.SgApellido, p.Telefono, p.Email, p.NSS
+                p.DNI, p.Nombre, p.PrApellido, p.SgApellido, p.Domicilio, p.Telefono, p.Email, p.NSS
             FROM Agente a
             INNER JOIN Persona p ON a.DNI = p.DNI
             """;

@@ -85,6 +85,35 @@ public class UsuarioDAO {
         }
     }
 
+    public UsuarioVO verificarUsuario(Connection con, String nombreUser, String contrasenya) {
 
+        String consulta = """
+            SELECT UsuarioId, NombreUser
+            FROM Usuario
+            WHERE NombreUser = ? AND Contrasenya = ?
+            """;
+
+        try (PreparedStatement stmt = con.prepareStatement(consulta)) {
+
+            stmt.setString(1, nombreUser);
+            stmt.setString(2, contrasenya);
+
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                return new UsuarioVO(
+                        rs.getInt("UsuarioId"),
+                        rs.getString("NombreUser")
+                );
+            }
+
+            rs.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 }
 

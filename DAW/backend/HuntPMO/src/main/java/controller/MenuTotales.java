@@ -1,9 +1,17 @@
 package controller;
 
+import HuntPMOVO.ReporteVO;
+import HuntPMOVO.UsuarioVO;
+import service.ReporteService;
+import service.UsuarioService;
+
+import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class MenuTotales {
     private Scanner sc = new Scanner(System.in);
+    private UsuarioService usuarioService = new UsuarioService();
+    private ReporteService reporteService = new ReporteService();
 
     private static final String PasswordMaestra = "Contraseña";
 
@@ -22,14 +30,79 @@ public class MenuTotales {
         }while(opcion != 0);
     }
 
-    private void loginUser(){
-        int opcion = 0;
-
+    private void loginUser() {
         System.out.print("Introduzca nombre del usuario: ");
         String nombreUser = sc.nextLine();
 
-        System.out.print("Introduzca contraseña con la que entrar: ");
+        System.out.print("Introduzca contrasenya: ");
         String contrasenya = sc.nextLine();
 
+        UsuarioVO usuario = usuarioService.verificarUsuario(nombreUser, contrasenya);
+
+        if (usuario != null) {
+            System.out.println("Has iniciado sesion correctamente.");
+            System.out.println("Bienvenido, " + usuario.getNombreUser());
+
+            menuUsuario(usuario);
+        } else {
+            System.out.println("Usuario o contraseña incorrectos.");
+        }
+    }
+
+    private void menuUsuario(UsuarioVO usuario) {
+        int opcion = 0;
+
+        do {
+            System.out.println("\n|=== MENU USUARIO ===|");
+            System.out.println("Usuario: " + usuario.getNombreUser());
+            System.out.println("1. Ver mis datos");
+            System.out.println("2. Escribir reporte");
+            System.out.println("3. Ver mis reportes");
+            System.out.println("0. Cerrar sesion");
+            System.out.print("Opcion: ");
+
+            switch (opcion) {
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 0:
+                    System.out.println("Sesion cerrada.");
+                    break;
+
+                default:
+                    System.out.println("Opcion no valida.");
+                    break;
+            }
+
+        } while (opcion != 0);
+    }
+
+    private void escribirReporte(UsuarioVO usuario) {
+        System.out.println("\n|==== ESCRIBIR REPORTE ====|");
+
+        System.out.print("Comentario: ");
+        String comentario = sc.nextLine();
+
+        ReporteVO reporte = new ReporteVO(
+                0,
+                comentario,
+                LocalDateTime.now(),
+                "Pendiente",
+                usuario.getUsuarioID()
+        );
+
+        boolean verificar = reporteService.crearReporte(reporte);
+
+        if (verificar) {
+            System.out.println("Reporte creado correctamente.");
+        } else {
+            System.out.println("No se pudo crear el reporte.");
+        }
     }
 }

@@ -1,20 +1,20 @@
 package HuntPMOVO;
 
 public class UsuarioVO{
-    private int UsuarioID;
+    private int usuarioID;
     private String nombreUser;
     private String contrasenya;
     private PersonaVO persona;
 
     public UsuarioVO(int usuarioID, String nombreUser, String contrasenya, PersonaVO persona) {
-        UsuarioID = usuarioID;
+        this.usuarioID = usuarioID;
         this.nombreUser = nombreUser;
         this.contrasenya = contrasenya;
         this.persona = persona;
     }
 
     public UsuarioVO(int usuarioID, String nombreUser) {
-        UsuarioID = usuarioID;
+        usuarioID = usuarioID;
         this.nombreUser = nombreUser;
     }
 
@@ -55,7 +55,6 @@ public class UsuarioVO{
         return "UsuarioVO{" +
                 "UsuarioID=" + UsuarioID +
                 ", nombreUser='" + nombreUser + '\'' +
-                ", contrasenya='" + contrasenya + '\'' +
                 ", persona=" + persona +
                 '}';
     }

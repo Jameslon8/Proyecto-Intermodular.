@@ -14,7 +14,7 @@ public class PersonaDAO {
     public List<PersonaVO> obtenerPersonas(Connection con) {
         List<PersonaVO> personas = new ArrayList<>();
 
-        String consulta = "SELECT DNI, Nombre, PrApellido, SgApellido, Telefono, Email, NSS FROM Persona";
+        String consulta = "SELECT DNI, Nombre, PrApellido, SgApellido, Domicilio, Telefono, Email, NSS FROM Persona";
 
         try {
             PreparedStatement ps = con.prepareStatement(consulta);

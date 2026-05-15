@@ -9,6 +9,7 @@ public class AgenteVO{
     private PersonaVO persona;
 
     public AgenteVO(int agenteID, String mote, int rango, String especialidad, String contrasenya, PersonaVO persona) {
+        this.agenteID = agenteID;
         this.mote = mote;
         this.rango = rango;
         this.especialidad = especialidad;
@@ -17,6 +18,7 @@ public class AgenteVO{
     }
 
     public AgenteVO(int agenteID, String mote, int rango, String especialidad, String contrasenya) {
+        this.agenteID = agenteID;
         this.mote = mote;
         this.rango = rango;
         this.especialidad = especialidad;

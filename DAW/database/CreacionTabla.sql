@@ -69,7 +69,7 @@ CREATE TABLE Rol (
     Rol varchar (1) NOT NULL,
     Detalles varchar (255) NOT NULL,
     FechaComienzo DATETIME NOT NULL,
-    FechaFinalización DATETIME,
+    FechaFinalizacion DATETIME,
     AgenteId int,
     CONSTRAINT fk_Agente
     FOREIGN KEY (AgenteId)
@@ -78,8 +78,9 @@ CREATE TABLE Rol (
 
 CREATE TABLE RolRevision (
     NuevoEstado varchar(50),
-    ReporteId int PRIMARY KEY,
-    RolId int PRIMARY KEY,
+    ReporteId int,
+    RolId int,
+    PRIMARY KEY (ReporteId, RolId),
     CONSTRAINT fk_Reporte
     FOREIGN KEY (ReporteId)
     REFERENCES Reporte(ReporteId),
@@ -90,8 +91,9 @@ CREATE TABLE RolRevision (
 
 CREATE TABLE RolAsignacion (
     NuevaDescripcion TEXT NOT NULL,
-    AnomaliaId int PRIMARY KEY,
-    RolId int PRIMARY KEY,
+    AnomaliaId int,
+    RolId int,
+    PRIMARY KEY (AnomaliaId, RolId),
     CONSTRAINT fk_Asignacion
     FOREIGN KEY (AnomaliaId)
     REFERENCES Anomalia(AnomaliaId),
@@ -102,8 +104,9 @@ CREATE TABLE RolAsignacion (
 
 CREATE TABLE ReportaAnomalia (
     Conclusiones varchar(255) NOT NULL,
-    AnomaliaId int PRIMARY KEY,
-    ReporteId int PRIMARY KEY,
+    AnomaliaId int,
+    ReporteId int,
+    PRIMARY KEY (AnomaliaId, ReporteId),
     CONSTRAINT fk_ReporteR
     FOREIGN KEY (ReporteId)
     REFERENCES Reporte(ReporteId),
