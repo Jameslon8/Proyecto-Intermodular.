@@ -5,24 +5,27 @@ public class PersonaVO {
     private String nombre;
     private String prApellido;
     private String sgApellido;
+    private String domicilio;
     private String telefono;
     private String email;
     private String NSS;
 
-    public PersonaVO(String dni, String nombre, String prApellido, String sgApellido, String telefono, String email, String NSS) {
+    public PersonaVO(String dni, String nombre, String prApellido, String sgApellido, String domicilio, String telefono, String email, String NSS) {
         this.dni = dni;
         this.nombre = nombre;
         this.prApellido = prApellido;
         this.sgApellido = sgApellido;
+        this.domicilio = domicilio;
         this.telefono = telefono;
         this.email = email;
         this.NSS = NSS;
     }
 
-    public PersonaVO(String dni, String nombre, String prApellido, String telefono, String email, String NSS) {
+    public PersonaVO(String dni, String nombre, String prApellido, String domicilio, String telefono, String email, String NSS) {
         this.dni = dni;
         this.nombre = nombre;
         this.prApellido = prApellido;
+        this.domicilio = domicilio;
         this.telefono = telefono;
         this.email = email;
         this.NSS = NSS;
@@ -60,6 +63,14 @@ public class PersonaVO {
         this.sgApellido = sgApellido;
     }
 
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
+
     public String getTelefono() {
         return telefono;
     }
@@ -85,4 +96,17 @@ public class PersonaVO {
     }
 
 
+    @Override
+    public String toString() {
+        return "PersonaVO{" +
+                "dni='" + dni + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", prApellido='" + prApellido + '\'' +
+                ", sgApellido='" + sgApellido + '\'' +
+                ", domicilio='" + domicilio + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", email='" + email + '\'' +
+                ", NSS='" + NSS + '\'' +
+                '}';
+    }
 }

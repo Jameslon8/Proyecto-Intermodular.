@@ -1,36 +1,33 @@
 package HuntPMOVO;
 
-public class AgenteVO extends PersonaVO{
-    private static int agenteID;
+public class AgenteVO{
+    private int agenteID;
     private String mote;
     private int rango;
     private String especialidad;
-    private AgenteVO agente;
+    private String contrasenya;
+    private PersonaVO persona;
 
-
-    public AgenteVO(String dni, String nombre, String prApellido, String sgApellido, String telefono,
-                    String email, String NSS, String mote, int rango, String especialidad, AgenteVO agente) {
-        super(dni, nombre, prApellido, sgApellido, telefono, email, NSS);
+    public AgenteVO(int agenteID, String mote, int rango, String especialidad, String contrasenya, PersonaVO persona) {
         this.mote = mote;
         this.rango = rango;
         this.especialidad = especialidad;
-        this.agente = agente;
+        this.contrasenya = contrasenya;
+        this.persona = persona;
     }
 
-    public AgenteVO(String dni, String nombre, String prApellido, String telefono, String email, String NSS, String mote, int rango, String especialidad, AgenteVO agente) {
-        super(dni, nombre, prApellido, telefono, email, NSS);
+    public AgenteVO(int agenteID, String mote, int rango, String especialidad, String contrasenya) {
         this.mote = mote;
         this.rango = rango;
         this.especialidad = especialidad;
-        this.agente = agente;
     }
 
-    public static int getAgenteID() {
+    public int getAgenteID() {
         return agenteID;
     }
 
-    public static void setAgenteID(int agenteID) {
-        AgenteVO.agenteID = agenteID;
+    public void setAgenteID(int agenteID) {
+        this.agenteID = agenteID;
     }
 
     public int getRango() {
@@ -49,12 +46,37 @@ public class AgenteVO extends PersonaVO{
         this.especialidad = especialidad;
     }
 
+    public String getMote() {
+        return mote;
+    }
+
+    public void setMote(String mote) {
+        this.mote = mote;
+    }
+
+    public String getContrasenya() {
+        return contrasenya;
+    }
+
+    public void setContrasenya(String contrasenya) {
+        this.contrasenya = contrasenya;
+    }
+
+    public PersonaVO getPersona() {
+        return persona;
+    }
+
+    public void setPersona(PersonaVO persona) {
+        this.persona = persona;
+    }
+
     @Override
     public String toString() {
         return "AgenteVO{" +
                 "mote='" + mote + '\'' +
                 ", rango=" + rango +
                 ", especialidad='" + especialidad + '\'' +
+                ", persona=" + persona +
                 '}';
     }
 }

@@ -1,23 +1,24 @@
 package HuntPMOVO;
 
-public class UsuarioVO extends PersonaVO{
-    private static int UsuarioID;
+public class UsuarioVO{
+    private int UsuarioID;
     private String nombreUser;
-    private String domicilio;
+    private String contrasenya;
+    private PersonaVO persona;
 
-    public UsuarioVO(String dni, String nombre, String prApellido, String sgApellido, String telefono, String email, String NSS, String nombreUser, String domicilio) {
-        super(dni, nombre, prApellido, sgApellido, telefono, email, NSS);
+    public UsuarioVO(int usuarioID, String nombreUser, String contrasenya, PersonaVO persona) {
+        UsuarioID = usuarioID;
         this.nombreUser = nombreUser;
-        this.domicilio = domicilio;
+        this.contrasenya = contrasenya;
+        this.persona = persona;
     }
 
-    public UsuarioVO(String dni, String nombre, String prApellido, String telefono, String email, String NSS, String nombreUser, String domicilio) {
-        super(dni, nombre, prApellido, telefono, email, NSS);
+    public UsuarioVO(int usuarioID, String nombreUser) {
+        UsuarioID = usuarioID;
         this.nombreUser = nombreUser;
-        this.domicilio = domicilio;
     }
 
-    public static int getUsuarioID() {
+    public int getUsuarioID() {
         return UsuarioID;
     }
 
@@ -29,23 +30,33 @@ public class UsuarioVO extends PersonaVO{
         this.nombreUser = nombreUser;
     }
 
-    public static void setUsuarioID(int usuarioID) {
+    public void setUsuarioID(int usuarioID) {
         UsuarioID = usuarioID;
     }
 
-    public String getDomicilio() {
-        return domicilio;
+    public String getContrasenya() {
+        return contrasenya;
     }
 
-    public void setDomicilio(String domicilio) {
-        this.domicilio = domicilio;
+    public void setContrasenya(String contrasenya) {
+        this.contrasenya = contrasenya;
+    }
+
+    public PersonaVO getPersona() {
+        return persona;
+    }
+
+    public void setPersona(PersonaVO persona) {
+        this.persona = persona;
     }
 
     @Override
     public String toString() {
         return "UsuarioVO{" +
-                "nombreUser='" + nombreUser + '\'' +
-                ", domicilio='" + domicilio + '\'' +
+                "UsuarioID=" + UsuarioID +
+                ", nombreUser='" + nombreUser + '\'' +
+                ", contrasenya='" + contrasenya + '\'' +
+                ", persona=" + persona +
                 '}';
     }
 }
