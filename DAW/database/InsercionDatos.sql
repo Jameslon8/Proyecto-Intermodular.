@@ -1,22 +1,22 @@
-INSERT INTO Persona (DNI, Nombre, PrApellido, SgApellido, Telefono, Email, NSS)
-VALUES ('48275931G', 'Alexis', 'Nessie', 'Johnson', '612345789', 'Ness2342@gmail.com', '281234567890'),
-('72649183H', 'James', 'Logan', NULL, '678912345', 'longesd29@gmail.com', '301987654321'),
-('19384756T', 'Mock', 'Nessie', 'Johnson', '623456781', 'Mock2342@gmail.com', '150456789123'),
-('05837462M', 'Astrid', 'Williams', 'Mertifur', '655789123', 'MercuryyyyyQ9@gmail.com', '421789456032'),
-('91726384Q', 'Jenn', 'Nevermind', 'Hollow', '644556677', 'TheDestroyerASMGF@gmail.com', '081234987654'),
-('36482915L', 'Marcial', 'Line', NULL, '677889900', 'Marcial76786@gmail.com', '361258963147'),
-('27591846Z', 'Alon', 'Marinee', 'Dafoe', '622334455', '99Raven99@gmail.com', '200147258369'),
-('64018392S', 'Chris', 'Fernandez', NULL, '611987654', 'SoyYomismoSisime@gmail.com', '471369258014'),
-('81927365B', 'Standford', 'Williams', 'Jerinfors', '634567892', 'diaryNNNumber4@gmail.com', '091753486201'),
-('50372691R', 'Paco', 'Gustavez', 'Cordonez', '699123456', 'The5thrue0ne@gmail.com', '331468275903'),
-('50372691R', 'Jombo', 'Melendez', 'Johnson', '699023856', 'PersonaNormal@gmail.com', '321468257903');
+INSERT INTO Persona (DNI, Nombre, PrApellido, SgApellido, Domicilio, Telefono, Email, NSS)
+VALUES ('48275931G', 'Alexis', 'Nessie', 'Johnson','Subwater Street 62', '612345789', 'Ness2342@gmail.com', '281234567890'),
+('72649183H', 'James', 'Logan', NULL,'Nevermind Street 22', '678912345', 'longesd29@gmail.com', '301987654321'),
+('19384756T', 'Mock', 'Nessie', 'Johnson', 'Volcano Street 22','623456781', 'Mock2342@gmail.com', '150456789123'),
+('05837462M', 'Astrid', 'Williams', 'Mertifur','Periodac Street 11', '655789123', 'MercuryyyyyQ9@gmail.com', '421789456032'),
+('91726384Q', 'Jenn', 'Nevermind', 'Hollow','Nevermind Street 44', '644556677', 'TheDestroyerASMGF@gmail.com', '081234987654'),
+('36482915L', 'Marcial', 'Line', NULL,'Adevnture Street 44', '677889900', 'Marcial76786@gmail.com', '361258963147'),
+('27591846Z', 'Alon', 'Marinee', 'Dafoe','Down Niohigi Street 81', '622334455', '99Raven99@gmail.com', '200147258369'),
+('64018392S', 'Chris', 'Fernandez', NULL,'Niohigi Street 31', '611987654', 'SoyYomismoSisime@gmail.com', '471369258014'),
+('81927365B', 'Standford', 'Williams', 'Jerinfors', 'Forcloe Street 37', '634567892', 'diaryNNNumber4@gmail.com', '091753486201'),
+('50372691R', 'Paco', 'Gustavez', 'Cordonez','Holowdol Street 29', '699123456', 'The5thrue0ne@gmail.com', '331468275903'),
+('50372691R', 'Jombo', 'Melendez', 'Johnson','Marrieto Street 12', '699023856', 'PersonaNormal@gmail.com', '321468257903');
 
-INSERT INTO Usuario(NombreUser, Domicilio, Contrasenya, DNI)
-VALUES ('TheJenn', 'Nevermind Street 44',"Kellllogs523", '91726384Q'),
-('Jameslon', 'Niohigi Street 31',"PreciousOMG", '64018392S'),
-('Marceline', 'Adevnture Street 44',"Bromdennn12m", '36482915L'),
-('Raven', 'Down Niohigi Street 81',"YnrUHRI3J", '27591846Z'),
-('Longesd342', 'Nevermind Street 22',"aaaghggwewbbb2", '72649183H');
+INSERT INTO Usuario(NombreUser, Contrasenya, DNI)
+VALUES ('TheJenn', "Kellllogs523", '91726384Q'),
+('Jameslon', "PreciousOMG", '64018392S'),
+('Marceline', "Bromdennn12m", '36482915L'),
+('Raven', "YnrUHRI3J", '27591846Z'),
+('Longesd342', "aaaghggwewbbb2", '72649183H');
 
 INSERT INTO Agente (Mote, Rango, Especialidad, Contrasenya, DNI)
 VALUES ('Ness1', '3', 'Anomalias digitales',"5274528945824", '48275931G'),

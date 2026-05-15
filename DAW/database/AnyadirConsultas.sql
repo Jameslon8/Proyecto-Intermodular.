@@ -8,7 +8,7 @@ SELECT
     U.NombreUser
 FROM Reporte
 JOIN Usuario U ON R.UsuarioId = U.UsuarioId
-ORDER BY FechaReporte DESC;
+ORDER BY Fecha DESC;
 
 --Select para ver todos los reportes de un usuario.
 

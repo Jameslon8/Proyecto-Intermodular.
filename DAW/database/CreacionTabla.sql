@@ -5,6 +5,7 @@ CREATE TABLE Persona (
     Nombre varchar(50) NOT NULL,
     PrApellido varchar(50) NOT NULL,
     SgApellido varchar(50),
+    Domicilio varchar(100) NOT NULL,
     Telefono varchar(15) NOT NULL,
     Email varchar(100) NOT NULL,
     NSS varchar(15) NOT NULL unique
@@ -13,7 +14,6 @@ CREATE TABLE Persona (
 CREATE TABLE Usuario (
     UsuarioId int AUTO_INCREMENT PRIMARY KEY,
     NombreUser varchar(50) NOT NULL,
-    Domicilio varchar(100) NOT NULL,
     Contrasenya varchar(50) NOT NULL,
     DNI varchar(9),
     CONSTRAINT fk_Persona
