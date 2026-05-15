@@ -28,35 +28,37 @@ public class MenuTotales {
             System.out.println("4. Acceso director");
             System.out.println("0. Salir");
             System.out.print("Opcion: ");
+
+            opcion = Integer.parseInt(sc.nextLine());
+
+            switch (opcion) {
+                case 1:
+                    loginUser();
+                    break;
+
+                case 2:
+                    loginAgente();
+                    break;
+
+                case 3:
+                    registrarUsuario();
+                    break;
+
+                case 4:
+                    accesoDirector();
+                    break;
+
+                case 0:
+                    System.out.println("Saliendo...");
+                    break;
+
+                default:
+                    System.out.println("Opcion no valida.");
+                    break;
+            }
         }while(opcion != 0);
 
-        opcion = Integer.parseInt(sc.nextLine());
 
-        switch (opcion) {
-            case 1:
-                loginUser();
-                break;
-
-            case 2:
-                loginAgente();
-                break;
-
-            case 3:
-                registrarUsuario();
-                break;
-
-            case 4:
-                accesoDirector();
-                break;
-
-            case 0:
-                System.out.println("Saliendo...");
-                break;
-
-            default:
-                System.out.println("Opcion no valida.");
-                break;
-        }
 
     }
 

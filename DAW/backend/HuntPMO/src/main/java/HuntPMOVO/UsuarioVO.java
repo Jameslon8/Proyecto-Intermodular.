@@ -38,7 +38,7 @@ public class UsuarioVO{
     }
 
     public void setUsuarioID(int usuarioID) {
-        usuarioID = usuarioID;
+        this.usuarioID = usuarioID;
     }
 
     public String getContrasenya() {
@@ -56,6 +56,8 @@ public class UsuarioVO{
     public void setPersona(PersonaVO persona) {
         this.persona = persona;
     }
+
+
 
     @Override
     public String toString() {

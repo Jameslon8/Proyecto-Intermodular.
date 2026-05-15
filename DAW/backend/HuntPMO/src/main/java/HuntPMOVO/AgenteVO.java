@@ -22,6 +22,7 @@ public class AgenteVO{
         this.mote = mote;
         this.rango = rango;
         this.especialidad = especialidad;
+        this.contrasenya = contrasenya;
     }
 
     public AgenteVO(String mote, int rango, String especialidad, String contrasenya, PersonaVO persona) {
